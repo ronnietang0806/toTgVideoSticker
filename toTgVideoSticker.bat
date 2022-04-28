@@ -30,7 +30,7 @@ SET quality=800K
 
 ::location validation
 IF NOT EXIST "%mylocation%/%myfilename%" (
-ECHO %mylocation%\%myfilename% not found
+ECHO "%mylocation%\%myfilename%" not found
 PAUSE
 EXIT /b 0
 )
