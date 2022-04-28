@@ -14,6 +14,7 @@ run step
 5. wait until convert end
 
 config
+
 1.mylocation:
 - default in C:\Users\user\Downloads
 
