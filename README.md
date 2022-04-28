@@ -16,15 +16,19 @@ run step
 config
 1.mylocation:
 - default in C:\Users\user\Downloads
+
 2.myOutputLocation
 - default same as your mylocation
 - ***this batch script file create folder for you, please modify it carefully
+
 3.fps: affect fps of the webm file
 - default 30
 - fps better around 20 ~ 30
+
 4.quality: affect file size of the webm file
 - file size should below 256KB
 - default 800K
 - can set it low if over size, 500K ~ 800K recommended
+
 x.width, height
 - default 512x512, fit and crop center if not square
