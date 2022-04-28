@@ -1,7 +1,15 @@
 @echo off
-:: please set your location first
-SET mylocation=C:\Users\user\Downloads
-SET myOutputLocation=%mylocation%
+::read config.ini
+for /f "tokens=1,2 delims==" %%a in (config.ini) do (
+if %%a==mylocation set mylocation=%%b
+if %%a==myOutputLocation set myOutputLocation=%%b
+if %%a==fps set fps=%%b
+if %%a==quality set quality=%%b
+if %%a==filetype set filetype=%%b
+)
+
+::replace output location if blank
+IF [%myOutputLocation%]==[] (SET myOutputLocation=%mylocation%)
 
 ::location validation
 IF NOT EXIST "%mylocation%\" (
@@ -18,15 +26,10 @@ PAUSE
 
 CD %CD%
 
-:: config
+:: input
 SET /p myfilename="Enter your filename: "
 SET /p myoutputname="Enter your Output webm filename (Dont include .webm):"
-SET filetype=.webm
 SET mywebmname=%myoutputname%%filetype%
-SET fps=30 
-:: fps better around 20 ~ 30
-SET quality=800K
-:: quality, please set it low if over size, 500K ~ 800K recommended
 
 ::location validation
 IF NOT EXIST "%mylocation%/%myfilename%" (
