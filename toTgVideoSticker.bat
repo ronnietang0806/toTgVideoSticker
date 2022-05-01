@@ -9,7 +9,7 @@ if %%a==filetype set filetype=%%b
 )
 
 ::replace output location if blank
-IF [%myOutputLocation%]==[] (SET myOutputLocation=%mylocation%)
+IF "%myOutputLocation%"==""  (SET myOutputLocation=%mylocation%)
 
 ::location validation
 IF NOT EXIST "%mylocation%\" (
